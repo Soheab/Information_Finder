@@ -9,6 +9,12 @@ Do you need more help? Visit my server here: **https://discord.gg/AlexFlipnote**
 - Powercord installed on Discord
 - git - https://git-scm.com/download/
 
+## Commands
+`.server <banner|features|icon|joined|owner|splash>` = Get more information about yourself
+
+`.user <avatar|created|guilds>` = Get more information about current server
+
+
 ## How to install
 1. Locate Powercord plugin folder by opening Discord user settings and following the image bellow.
 ![Image_Example](https://i.alexflipnote.dev/2mSnX9g.png)
