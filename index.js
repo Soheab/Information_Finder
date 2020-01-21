@@ -51,7 +51,10 @@ module.exports = class InfoFinder extends Plugin {
       send: false, result: context,
       appearance: {
         username: 'Information Finder',
-        avatar: {name: "alexflipnote_info", url: "https://i.alexflipnote.dev/A4U2C6n.png"}
+        avatar: {
+          name: "alexflipnote_info",
+          url: "https://raw.githubusercontent.com/AlexFlipnote/pc-Information_Finder/master/_branding/infoFinder.png"
+        }
       }
     }
   }
