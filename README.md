@@ -10,9 +10,9 @@ Do you need more help? Visit my server here: **https://discord.gg/AlexFlipnote**
 - git - https://git-scm.com/download/
 
 ## Commands
-`.server <banner|features|icon|joined|owner|splash>` = Get more information about yourself
+`.server <banner|features|icon|joined|owner|splash>` = Get more information about current server
 
-`.user <avatar|created|guilds>` = Get more information about current server
+`.user <avatar|created|guilds>` = Get more information about yourself
 
 
 ## How to install
