@@ -18,7 +18,7 @@ Do you need more help? Visit my server here: **https://discord.gg/AlexFlipnote**
 ## How to install
 1. Locate Powercord plugin folder by opening Discord user settings and following the image bellow.
 ![Image_Example](https://i.alexflipnote.dev/2mSnX9g.png)
-2. Open cmd/terminal inside that directory and do the following command: `git clone https://github.com/AlexFlipnote/pc-Information_Finder`
+2. Open cmd/terminal inside that directory and do the following command: `git clone https://github.com/AlexFlipnote/Information_Finder`
 3. You're done, Powercord will update the plugin for you automatically (which is why git is needed). To take effect, either reload Discord or press the `Fetch Missing Plugins` button inside the same location you found the `Open Plugins Folder` button.
 
 ## FAQ
