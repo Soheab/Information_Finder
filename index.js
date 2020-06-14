@@ -54,14 +54,7 @@ module.exports = class InfoFinder extends Plugin {
 
   send_message(context) {
     return {
-      send: false, result: context,
-      appearance: {
-        username: 'Information Finder',
-        avatar: {
-          name: "alexflipnote_info",
-          url: "https://raw.githubusercontent.com/AlexFlipnote/pc-Information_Finder/master/_branding/infoFinder.png"
-        }
-      }
+      send: false, result: context
     }
   }
 
