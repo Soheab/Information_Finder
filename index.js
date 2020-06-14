@@ -6,36 +6,42 @@ const user = require("./user")
 module.exports = class InfoFinder extends Plugin {
   async startPlugin() {
     await this.import_modules()
-
-    this.registerCommand(
-      "user", [],
-      "Get more information about yourself",
-      `{c} <${Object.keys(user).join("|")}>`,
-      (args) => {
+    powercord.api.commands.registerCommand({
+      command: "user",
+      description: "Get more information about yourself",
+      usage: `{c} <${Object.keys(user).join("|")}>`,
+      executor: (args) => {
         const subcommand = user[args[0]]
         if (!subcommand) return this.subcmd_unknown()
         return subcommand.func(this)
-      }, (args) => {
+      },
+      autocomplete: (args) => {
         if (args[0] !== void 0 && args.length === 1) {
           return { commands: this.subcmd_autocomplete(user, args), header: 'User subcommands' }
         }
       }
-    )
+    })
 
-    this.registerCommand(
-      "server", [],
-      "Get more information about current server",
-      `{c} <${Object.keys(server).join("|")}>`,
-      (args) => {
+    powercord.api.commands.registerCommand({
+      command: "server",
+      description: "Get more information about current server",
+      usage: `{c} <${Object.keys(server).join("|")}>`,
+      executor: (args) => {
         const subcommand = server[args[0]]
         if (!subcommand) return this.subcmd_unknown()
         return subcommand.func(this)
-      }, (args) => {
+      },
+      autocomplete: (args) => {
         if (args[0] !== void 0 && args.length === 1) {
           return { commands: this.subcmd_autocomplete(server, args), header: 'Server subcommands' }
         }
       }
-    )
+    })
+  }
+
+  pluginWillUnload() {
+    powercord.api.commands.unregisterCommand("server")
+    powercord.api.commands.unregisterCommand("user")
   }
 
   subcmd_autocomplete(target, args) {
@@ -48,14 +54,7 @@ module.exports = class InfoFinder extends Plugin {
 
   send_message(context) {
     return {
-      send: false, result: context,
-      appearance: {
-        username: 'Information Finder',
-        avatar: {
-          name: "alexflipnote_info",
-          url: "https://raw.githubusercontent.com/AlexFlipnote/pc-Information_Finder/master/_branding/infoFinder.png"
-        }
-      }
+      send: false, result: context
     }
   }
 
@@ -73,10 +72,5 @@ module.exports = class InfoFinder extends Plugin {
       let name = import_list[g]
       this[name] = (await getModule([name]))[name]
     }
-  }
-
-  unregisterTag(name) {
-    powercord.api.commands.unregisterCommand("server")
-    powercord.api.commands.unregisterCommand("user")
   }
 }
