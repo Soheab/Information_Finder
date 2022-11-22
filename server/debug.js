@@ -3,7 +3,7 @@ module.exports = {
   description: "Get all guild variables (debug reasons)",
   func: (ctx) => {
     console.log("[ INFORMATION FINDER ]")
-    console.log(ctx.get_guild())
+    console.log(ctx.get_current_guild())
     return ctx.send_message("Check the console ❤")
   }
 };
